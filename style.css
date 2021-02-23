@@ -1,0 +1,66 @@
+*{
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+}
+body{
+  background-color: #F2ECE9;
+  scroll-behavior: smooth;
+}
+
+.container-fluid{
+  background: url('img/man\ with\ files_5.png') no-repeat fixed -550px -690px;
+}
+
+.main_head{
+ background-color: #fff;
+ border-radius: 20px;
+ box-shadow: 2px 2px 5px #bbb;
+}
+.sub_head{
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 2px 2px 5px #bbb;
+  padding:15px;
+}
+
+.form-floating{
+  position: relative;
+}
+
+.success input{
+  border-width:2px;
+  border-color: #2ecc71;
+}
+
+.error input{
+  border-width:2px;
+  border-color: #e74c3c;
+}
+
+.form-floating i{
+  position: absolute;
+  top:20px;
+  right:10px;
+  visibility: hidden;
+}
+
+.success i.fa-check-circle{
+  color:#2ecc71;
+  visibility: visible;
+}
+.error i.fa-exclamation-circle{
+  color:#e74c3c;
+  visibility: visible;
+}
+
+.form-floating small{
+  position: absolute;
+  left:1.5px;
+  visibility: hidden;
+}
+
+.error small{
+  color:#e74c3c;
+  visibility: visible;
+}
