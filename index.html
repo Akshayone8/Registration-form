@@ -4,231 +4,359 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Registration Form</title>
+  <title>Document</title>
   <link rel="icon"  href="img/edit.png"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+  <!-- bootstrap cdn  -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- fontawesome cdn  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+  <!-- stylesheet link  -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container-fluid">
-
-   <form action=""class='form'id='form'>
-    <!------------ row_1_starts----------->
+<!-- header-started  -->
     <div class="row mt-2">
       <div class="col-md-6 m-md-auto main_head">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#1dd1a1" fill-opacity="1" d="M0,160L48,138.7C96,117,192,75,288,64C384,53,480,75,576,90.7C672,107,768,117,864,112C960,107,1056,85,1152,69.3C1248,53,1344,43,1392,37.3L1440,32L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
-        <h1 class='text-center'>Registration form </h1>
+        <h1 class='text-center'id='regForm'>Registration form </h1>
       </div>
     </div>
-    <!------------ row_1_end----------->
-    <!------------ row_2_starts----------->
-    <div class="row mt-3">
-      <div class="col-md-6 m-md-auto sub_head">
-        <h3>Registration</h3>
-        <p class='mt-md-3'>Please register yourself for job notification</p>
-        <p>The name and photo associated with your Google account will be recorded when you upload files and submit this form.</p>
-        <p>Google Link whith bold font </p>
-        <p>*Required</p>
-      </div>
-    </div>
-    <!------------ row_2_end----------->
-    <!------------ row_3_starts----------->
-    <div class="row mt-3">
-      <div class="col-md-6 m-md-auto sub_head ">
-        <h6>Email address*</h6>
-        <div class="form-floating mb-3 ">
-          <input type="email" class="form-control" id="email" placeholder="name@example.com">
-          <label for="email">Email address</label>
-            <i class="fas fa-check-circle"></i>
-            <i class="fas fa-exclamation-circle"></i>
-            <small>Error Message</small>
-        </div>
-      </div>
-    </div>
-    <!------------ row_3_end----------->
-     <!------------ row_4_starts----------->
-     <div class="row mt-3">
-      <div class="col-md-6 m-md-auto sub_head ">
-        <h6>Name*</h6>
-        <div class="form-floating  mb-3">
-          <input type="text" class="form-control" id="name" placeholder="name@example.com">
-          <label for="name">Your answer</label>
-          <i class="fas fa-check-circle"></i>
-          <i class="fas fa-exclamation-circle"></i>
-          <small>Error Message</small>
-        </div>
-      </div>
-    </div>
-    <!------------ row_4_end----------->
-    <!------------ row_5_starts----------->
-    <div class="row mt-3">
+<!-- header-end  -->
+    <!-- form-field-started  -->
+    <form action=""class='formClass'id='formId'>
+
+      <!-- Regeistration field  -->
+        <div class="row mt-3">
           <div class="col-md-6 m-md-auto sub_head">
-            <h6>Age*</h6>
-            <div class="form-floating mb-3">
-              <input type="text" class="form-control" id="age" placeholder="name@example.com">
-              <label for="age">Your answer</label>
-              <i class="fas fa-check-circle"></i>
-              <i class="fas fa-exclamation-circle"></i>
-              <small>Error Message</small>
+            <h3>Registration</h3>
+              <p class='mt-md-3'>Please register yourself for job notification</p>
+              <p>The name and photo associated with your Google account will be recorded when you upload files and submit this form.</p>
+              <p>Not <span class='a'>akshyvo@gmail.com?</span> <a href='https://accounts.google.com/AddSession/signinchooser?hl=en&continue=https%3A%2F%2Fwww.google.com%3Fhl%3Den-US&ec=GAlA8wE&flowName=GlifWebSignIn&flowEntry=AddSession'style='text-decoration:none'>Switch account</a></p>
+              <p class='text-danger'>*Required</p>
+          </div>
+        </div>
+      <!-- Regeistration field  -->
+
+      <!-- email field  -->
+        <div class="row mt-3">
+          <div class="col-md-6 m-md-auto sub_head ">
+            <h6>Email address*</h6>
+              <div class="form-group">
+                <label for="regemail">Email</label>
+                  <input type="email"class='form-control'id='regemail'>
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                  <small>Error Message</small>
+              </div>
+          </div>
+        </div>
+      <!-- email field  -->
+
+      <!-- name field  -->
+        <div class="row mt-3">
+          <div class="col-md-6 m-md-auto sub_head ">
+            <h6>Name*</h6>
+            <div class="form-group">
+              <label for="regname">Name</label>
+                <input type="text"class='form-control'id='regname'>
+                  <i class="fas fa-check-circle"></i>
+                  <i class="fas fa-exclamation-circle"></i>
+                <small>Error Message</small>
             </div>
           </div>
-      </div>
-    <!------------ row_5_end----------->
-     <!------------ row_6_starts----------->
-     <div class="row mt-3">
-      <div class="col-md-6 m-md-auto sub_head">
-        <h6>Gender*</h6>
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-          <label class="form-check-label" for="flexRadioDefault1">
-            Male
-          </label>
         </div>
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-          <label class="form-check-label" for="flexRadioDefault2">
-           Female
-          </label>
+      <!-- name field  -->
+
+      <!-- Gender field  -->
+        <div class="row mt-3 ">
+          <div class="form-group col-md-6 m-md-auto sub_head ">
+
+            <h6>Gender*</h6>
+              <div class="form-check">
+                <input type="radio"class='form-check-input'id='male'name='gender'>
+                <label for="male"class='form-check-label'>Male</label>
+              </div>
+              <div class="form-check">
+                <input type="radio"class='form-check-input'id='female'name='gender'>
+                <label for="female"class='form-check-label'>Female</label>
+              </div>
+              <div class="form-check">
+                <input type="radio"class='form-check-input'id='other'name='gender'>
+                <label for="other"class='form-check-label'>Prefer not to say</label>
+              </div>
+              <small id='genderSmall'>Select atleast one radio button </small>
+
+          </div>
         </div>
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" checked>
-          <label class="form-check-label" for="flexRadioDefault3">
-            Prefer not to say
-          </label>
-        </div>
-      </div>
-  </div>
-   <!------------ row_6_end----------->
-   <!------------ row_7_starts----------->
-   <div class="row mt-3">
-    <div class="col-md-6 m-md-auto sub_head">
-      <h6>Permanent Address*</h6>
-      <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="address" placeholder="name@example.com">
-        <label for="address">Your answer</label>
-        <i class="fas fa-check-circle"></i>
-        <i class="fas fa-exclamation-circle"></i>
-        <small>Error Message</small>
-      </div>
-    </div>
-  </div>
-  <!------------ row_7_end----------->
-  <!------------ row_7_starts----------->
-     <div class="row mt-3">
-      <div class="col-md-6 m-md-auto sub_head">
-        <h6>Current Address</h6>
-        <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="caddress" placeholder="name@example.com">
-          <label for="caddress">Your answer</label>
-          <i class="fas fa-check-circle"></i>
-          <i class="fas fa-exclamation-circle"></i>
-          <small>Error Message</small>
-        </div>
-      </div>
-    </div>
-  <!------------ row_7_end----------->
-   <!------------ row_8_starts----------->
-   <div class="row mt-3">
-    <div class="col-md-6 m-md-auto sub_head">
-      <h6>Highest education degree*</h6>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1.0">
-        <label class="form-check-label" for="flexRadioDefault1.0">
-         Non-graduate
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2.0" checked>
-        <label class="form-check-label" for="flexRadioDefault2.0">
-         Graduate
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3.0" checked>
-        <label class="form-check-label" for="flexRadioDefault3.0">
-          Masters
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4.0" checked>
-        <label class="form-check-label" for="flexRadioDefault4.0">
-          Phd
-        </label>
-      </div>
-      <div class="row">
-        <div class="col-md-4 form-check">
-          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault5.0" checked>
-          <label class="form-check-label" for="flexRadioDefault5.0">
-            other
-          </label>
-        </div>
-        <div class="col-md-8 form-check">
-          <div class="form-floating ">
-            <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
-            <label for="floatingInput">Your answer</label>
+      <!-- Gender field  -->
+
+      <!-- Address field  -->
+      <div class="row mt-3">
+        <div class="col-md-6 m-md-auto sub_head ">
+          <h6>Permanent Address*</h6>
+          <div class="form-group">
+            <label for="regaddress">Permanent Address</label>
+              <input type="text"class='form-control'id='regaddress'>
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+              <small>Error Message</small>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-   <!------------ row_8_end----------->
-   <!------------ row_9_starts----------->
-   <div class="row mt-3">
-    <div class="col-md-6 m-md-auto sub_head">
-      <h6>Picture*</h6>
-      <div class="mb-3">
-        <input class="form-control" type="file" id="formFile">
-      </div>
-    </div>
-  </div>
-  <!------------ row_9_end----------->
-  <!------------ row_10_starts----------->
-  <div class="row mt-3">
-    <div class="col-md-6 m-md-auto sub_head">
-      <h6>Resume*</h6>
-      <div class="mb-3">
-        <input class="form-control" type="file" id="formFile">
-      </div>
-    </div>
-  </div>
-  <!------------ row_10_end----------->
-    <!------------ row_11_starts----------->
-    <div class="row mt-3">
-      <div class="col-md-6 m-md-auto sub_head">
-        <h6>Linkedin profile*</h6>
-        <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="profile" placeholder="name@example.com">
-          <label for="profile">Your answer</label>
-          <i class="fas fa-check-circle"></i>
-          <i class="fas fa-exclamation-circle"></i>
-          <small>Error Message</small>
+      <!-- Address field  -->
+
+      <!-- Current Address field  -->
+       <div class="row mt-3">
+        <div class="col-md-6 m-md-auto sub_head ">
+          <h6>Current Address</h6>
+          <div class="form-group">
+            <label for="regcaddress">Current  Address</label>
+              <input type="text"class='form-control'id='regcaddress'>
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+              <small>Error Message</small>
+          </div>
         </div>
       </div>
-    </div>
-  <!------------ row_11_end----------->
-  <!------------ row_12_start----------->
-  <div class="row mt-3">
-    <div class="col-md-6 m-md-auto sub_head">
-      <h6>What makes you unique*</h6>
-      <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="ans" placeholder="name@example.com">
-        <label for="ans">Your answer</label>
-        <i class="fas fa-check-circle"></i>
-        <i class="fas fa-exclamation-circle"></i>
-        <small>Error Message</small>
+      <!-- Current Address field  -->
+
+      <!-- Location field  -->
+        <div class="row mt-3 ">
+          <div class="form-group col-md-6 m-md-auto sub_head ">
+
+            <h6>Location Type*</h6>
+              <div class="form-check">
+                <input type="radio"class='form-check-input'id='urban'name='locals'>
+                <label for="urban"class='form-check-label'>Urban</label>
+              </div>
+              <div class="form-check">
+                <input type="radio"class='form-check-input'id='suburban'name='locals'>
+                <label for="suburban"class='form-check-label'>Sub-Urban</label>
+              </div>
+              <div class="form-check">
+                <input type="radio"class='form-check-input'id='rural'name='locals'>
+                <label for="rural"class='form-check-label'>Rural</label>
+                
+              </div>
+            <small id='checkSmall'>Select atleast one option</small>
+              
+          </div>
+        </div>
+      <!-- Location field  -->
+
+      <!-- education field  -->
+
+      <div class="row mt-3 ">
+        <div class="form-group col-md-6 m-md-auto sub_head ">
+          <h6>Highest Education*</h6>
+            <div class="form-check">
+              <input type="radio"class='form-check-input'id='nongraduate'name='educate'>
+              <label for="nongraduate"class='form-check-label'>Non-Graduate</label>
+            </div>
+            <div class="form-check">
+              <input type="radio"class='form-check-input'id='graduate'name='educate'>
+              <label for="graduate"class='form-check-label'>Graduate</label>
+            </div>
+            <div class="form-check">
+              <input type="radio"class='form-check-input'id='master'name='educate'>
+              <label for="master"class='form-check-label'>Masters</label>
+            </div>
+            <div class="form-check">
+              <input type="radio"class='form-check-input'id='phd'name='educate'>
+              <label for="phd"class='form-check-label'>Phd</label>
+            </div>
+          <div class="row  m-auto">
+            <div class="form-check col-md-3">
+              <input type="radio"class='form-check-input 'id='edu'name='educate'>
+              <label for="edu"class='form-check-label'>Other</label>
+            </div>
+            <div class="form-group col-md-9">
+              <label for="regedu"class='sr-only'>Education</label>
+                <input type="text"class='form-control'id='regedu'placeholder='Other? Write your answer here'>
+            </div>
+          </div>
+          <small id='eduSmall'>Select atleast one option</small>
+        </div>
       </div>
-    </div>
+
+      <!-- education field  -->
+
+      <!-- Mobile field  -->
+       <div class="row mt-3">
+        <div class="col-md-6 m-md-auto sub_head ">
+          <h6>Mobile*</h6>
+          <div class="form-group">
+            <label for="regmobile">Mobile</label>
+              <input type="text"class='form-control'id='regmobile'>
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+              <small>Error Message</small>
+          </div>
+        </div>
+      </div>
+      <!-- Mobile field  -->
+
+
+      <!-- skills field  -->
+      <div class="row mt-3 ">
+        <div class="form-group col-md-6 m-md-auto sub_head ">
+          <h6>Skills*</h6>
+            <div class="form-check">
+              <input type="checkbox"class='form-check-input'id='sales'name='skills'>
+              <label for="sales"class='form-check-label'>Sales</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox"class='form-check-input'id='coding'name='skills'>
+              <label for="coding"class='form-check-label'>Coding</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox"class='form-check-input'id='accounts'name='skills'>
+              <label for="accounts"class='form-check-label'>Accounts</label>
+            </div>
+            <div class="form-check">
+              <input type="checkbox"class='form-check-input'id='management'name='skills'>
+              <label for="management"class='form-check-label'>Management</label>
+            </div>
+          <div class="row  m-auto">
+            <div class="form-check col-md-3">
+              <input type="checkbox"class='form-check-input'id='skill'name='skills'>
+              <label for="skill"class='form-check-label'>Other</label>
+            </div>
+            <div class="form-group col-md-9">
+              <label for="regskill"class='sr-only'>Skills</label>
+                <input type="text"class='form-control'id='regskill'placeholder='other? Write your answer here'>
+            </div>
+          </div>
+          <small id='skillSmall'>Select atleast one option</small>
+        </div>
+      </div>
+      <!-- skills field  -->
+
+      <!-- Picture field  -->
+      <div class="row mt-3 ">
+        <div class="form-group col-md-6 m-md-auto sub_head ">
+          <h6>Picture*</h6>
+          <div>
+            <input type="file"class='form-control'accept='.jpg,.jpeg,.png'id='imgFile'>
+            <small>Error Message</small>
+          </div>
+        </div>
+      </div>
+      <!-- Picture field  -->
+
+      <!-- Resume field  -->
+      <div class="row mt-3 ">
+        <div class="form-group col-md-6 m-md-auto sub_head ">
+          <h6>Resume*</h6>
+          <div>
+            <input type="file"class='form-control'accept='.pdf'id='pdfFile'>
+            <small>Error Message</small>
+          </div>
+        </div>
+      </div>
+      <!-- Resume field  -->
+
+      <!-- Hobbies field  -->
+      <div class="row mt-3">
+        <div class="col-md-6 m-md-auto sub_head ">
+          <h6 >Hobbies</h6>
+          <div class="form-check form-check-inline">
+            <input type="checkbox" class="form-check-input"id='music'>
+            <label for='music'class="form-check-label">Music</lebel>
+          </div>
+          <div class="form-check form-check-inline">
+            <input type="checkbox" class="form-check-input"id='sports'>
+            <label for='sports'class="form-check-label">Sports</lebel>
+          </div>
+          <div class="form-check form-check-inline">
+            <input type="checkbox" class="form-check-input"id='travel'>
+            <label for='travel'class="form-check-label">Travel</lebel>
+          </div>
+          <div class="form-check form-check-inline">
+            <input type="checkbox" class="form-check-input"id='writing'>
+            <label for='writing'class="form-check-label">Writing</lebel>
+          </div>
+          <div class="form-check form-check-inline">
+            <input type="checkbox" class="form-check-input"id='read'>
+            <label for='read'class="form-check-label">Read</lebel>
+          </div>
+          <div class="form-check form-check-inline">
+            <input type="checkbox" class="form-check-input"id='art'>
+            <label for='art'class="form-check-label">Art</lebel>
+          </div>
+          <div class="form-check form-check-inline">
+            <input type="checkbox" class="form-check-input"id='yoga'>
+            <label for='yoga'class="form-check-label">Yoga</lebel>
+          </div>
+        </div>
+      </div>
+      <!-- Hobbies field  -->
+
+      <!-- Language field  -->
+      <div class="row mt-3">
+        <div class="col-md-6 m-md-auto sub_head">
+          <select class="form-select" multiple aria-label="Default select example">
+            <option selected>Select Language</option>
+            <option value="1">Kannada</option>
+            <option value="2">Hindi</option>
+            <option value="3">Telugu</option>
+            <option value="3">English</option>
+          </select>
+        </div>
+      </div>
+      <!-- Language field  -->
+
+      <!-- Linkedin field  -->
+      <div class="row mt-3">
+        <div class="col-md-6 m-md-auto sub_head ">
+          <h6>Linked Profile*</h6>
+          <div class="form-group">
+            <label for="reglink">Linked Profile</label>
+              <input type="text"class='form-control'id='reglink'>
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+              <small>Error Message</small>
+          </div>
+        </div>
+      </div>
+      <!-- Linkedin field  -->
+
+      <!-- answer field  -->
+      <div class="row mt-3">
+        <div class="col-md-6 m-md-auto sub_head ">
+          <h6>What Makes you unique*</h6>
+          <div class="form-group">
+            <label for="regans">Your answer</label>
+              <input type="text"class='form-control'id='regans'>
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+              <small>Error Message</small>
+          </div>
+        </div>
+      </div>
+      <!-- answer field  -->
+
+
+      <!-- button  -->
+        <!-- <div class="col-md-6 m-md-auto ">
+          <button class="btn btn-primary mt-3">Submit</button>
+        </div> -->
+        <div class="row mt-3">
+          <div class="col-md-5 m-md-auto">
+              <button class=" btn btn-primary">Submit</button>
+          </div>
+          <div class='col-1 up'>
+            <a href="#regForm"><i class="fas fa-arrow-circle-up"></i></a>
+          </div>
+        </div>
+      <!-- button  -->
+
+    </form>
+    <!-- form-field-end -->
   </div>
-   <!------------ row_12_end----------->
-   <div class="row mt-3">
-    <div class="col-md-6 m-md-auto">
-        <button class="btn btn-primary">Submit</button>
-    </div>
-  </div>
-</form>
-  </div>
+  <!-- bootstrap js cdn  -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- javascript link  -->
   <script src='script.js'></script>
 </body>
 </html>
