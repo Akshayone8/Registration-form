@@ -171,9 +171,10 @@
               <input type="radio"class='form-check-input 'id='edu'name='educate'>
               <label for="edu"class='form-check-label'>Other</label>
             </div>
-            <div class="form-group col-md-9">
+            <div class="form-group col-md-10">
               <label for="regedu"class='sr-only'>Education</label>
-                <input type="text"class='form-control'id='regedu'placeholder='Other? Write your answer here'>
+                <input type="text"class='form-control'id='regedu'placeholder='Other? Write your answer here'disabled>
+                <small>Error Message</small>
             </div>
           </div>
           <small id='eduSmall'>Select atleast one option</small>
@@ -223,9 +224,10 @@
               <input type="checkbox"class='form-check-input'id='skill'name='skills'>
               <label for="skill"class='form-check-label'>Other</label>
             </div>
-            <div class="form-group col-md-9">
+            <div class="form-group col-md-10">
               <label for="regskill"class='sr-only'>Skills</label>
-                <input type="text"class='form-control'id='regskill'placeholder='other? Write your answer here'>
+                <input type="text"class='form-control'id='regskill'placeholder='other? Write your answer here'disabled>
+                <small>Error Message</small>
             </div>
           </div>
           <small id='skillSmall'>Select atleast one option</small>
@@ -296,13 +298,15 @@
       <!-- Language field  -->
       <div class="row mt-3">
         <div class="col-md-6 m-md-auto sub_head">
-          <select class="form-select" multiple aria-label="Default select example">
+          <h6 >Select language*</h6>
+          <select class="form-select" multiple aria-label="Default select example"id='selectbox'onchange='getSelectValue()'>
             <option selected>Select Language</option>
-            <option value="1">Kannada</option>
-            <option value="2">Hindi</option>
-            <option value="3">Telugu</option>
-            <option value="3">English</option>
+            <option value="kannada">Kannada</option>
+            <option value="hindi">Hindi</option>
+            <option value="telgu">Telugu</option>
+            <option value="english">English</option>
           </select>
+          <small id='langSmall'>Select atleast one Language</small>
         </div>
       </div>
       <!-- Language field  -->
@@ -313,7 +317,7 @@
           <h6 class='mb-3'>Linked Profile*</h6>
           <div class="form-group">
             <!-- <label for="reglink">Linked Profile</label> -->
-              <input type="text"class='form-control'id='reglink'placeholder='your answer'>
+              <input type="url"class='form-control'id='reglink'placeholder='your answer'>
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
               <small>Error Message</small>
@@ -345,6 +349,7 @@
         <div class="row mt-3">
           <div class="col-md-5 m-md-auto">
               <button class=" btn btn-primary">Submit</button>
+              <input type='reset' value='Reset'class=" btn btn-outline-danger ">
           </div>
           <div class='col-1 up'>
             <a href="#regForm"><i class="fas fa-arrow-circle-up"></i></a>

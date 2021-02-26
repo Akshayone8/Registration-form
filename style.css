@@ -83,6 +83,12 @@ body{
   left:20px;
   color:red;
 }
+#langSmall{
+  position: absolute;
+  left:370px;
+  color:red;
+  visibility: hidden;
+}
 
 .up {
   text-align: right;

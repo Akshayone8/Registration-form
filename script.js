@@ -11,8 +11,8 @@ let skills = document.getElementsByName('skills');
 let imgFile = document.getElementById('imgFile');
 let pdfFile = document.getElementById('pdfFile');
 let regLink = document.getElementById('reglink');
-let regAns =document.getElementById('regans');
-
+let regAns = document.getElementById('regans');
+let select = document.getElementById('selectbox');
 
 
 
@@ -36,6 +36,7 @@ function Validate(){
   let pdfFileValue = pdfFile.value;
   let regLinkValue = regLink.value.trim();
   let regAnsValue = regAns.value.trim();
+  
   
 
 
@@ -67,7 +68,8 @@ function Validate(){
   for(i=0;i<gender.length;i++){
       if(gender[i].checked===true){
         setGender('hidden');
-        return true;
+        // return true;
+        break;
       }else{
         setGender('visible');
         
@@ -89,7 +91,8 @@ function Validate(){
   for(j=0;j<local.length;j++){
     if(local[j].checked===true){
         setCheck('hidden');
-      return true;
+      // return true;
+      break;
     }else{
         setCheck('visible');
     }
@@ -99,8 +102,21 @@ function Validate(){
   //Education Validation 
   for(j=0;j<educate.length;j++){
     if(educate[j].checked===true){
+      if(educate[j].id==='edu'){
+        let regedu = document.getElementById('regedu');
+          regedu.disabled=false;
+        let regEduvalue = regedu.value.trim();
+          if(regEduvalue === ''){
+            setErrorFor(regedu,'Others field cannot be blank');
+          }else if(regEduvalue.length>=2){
+            setSuccessFor(regedu);
+          }else{
+            setErrorFor(regedu,'Enter a valid name');
+          }
+      }
         setEdu('hidden');
-      return true;
+      // return true;
+      break;
     }else{
         setEdu('visible');
     }
@@ -122,8 +138,20 @@ function Validate(){
   //skill validation
   for(j=0;j<skills.length;j++){
     if(skills[j].checked===true){
+      if(skills[j].id==='skill'){
+        let regskill = document.getElementById('regskill');
+        regskill.disabled=false;
+        let regSkillValue = regskill.value.trim();
+          if(regSkillValue === ''){
+            setErrorFor(regskill,'Skills field cannot be blank');
+          }else if(regSkillValue.length>=3){
+            setSuccessFor(regskill);
+          }else{
+            setErrorFor(regskill,'Enter a valid skill');
+          }
+      }
         setSkill('hidden');
-      return true;
+      break;
     }else{
         setSkill('visible');
     }
@@ -142,6 +170,13 @@ function Validate(){
     setSuccessFor(pdfFile);
   }else{
     setErrorFor(pdfFile,'file cannot be blank');
+  }
+
+  // Language validation 
+  if(select.value==='Select Language'){
+    setLang('visible');
+  }else{
+    setLang('hidden');
   }
 
   // Linked validation
@@ -183,7 +218,7 @@ function setSuccessFor(input){
 
 //----------------------------- email validation using regX-------------------------- //
 function isEmail(email){
-  return /^[a-zA-z]{5,15}@[a-z]{4,6}\.[a-z]{3,4}([.a-z]{2,3})?$/.test(email);
+  return /^[a-zA-z]{3,15}@[a-z]{4,6}\.[a-z]{3,4}([.a-z]{2,3})?$/.test(email);
   
 
   // /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
@@ -212,5 +247,10 @@ function  setEdu(input){
 
 function setSkill(input){
   let ski = document.getElementById('skillSmall');
-  ski.style.visibility = input 
+  ski.style.visibility = input ;
+}
+
+function setLang(input){
+  let lang = document.getElementById('langSmall');
+  lang.style.visibility = input;
 }
