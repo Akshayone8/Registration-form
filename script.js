@@ -113,7 +113,7 @@ function Validate(){
   }
   else if(!isMobile(regMobileValue))
   {
-    setErrorFor(regMobile,'enter a valid email');
+    setErrorFor(regMobile,'enter a valid mobile number');
   }
   else{
     setSuccessFor(regMobile);
