@@ -68,6 +68,13 @@ body{
   left:20px;
   color:red;
 }
+
+#selectOneSmall{
+  position: absolute;
+  left:20px;
+  color:red;
+  /* visibility: visible; */
+}
 #checkSmall{
   position: absolute;
   left:20px;

@@ -13,7 +13,7 @@ let pdfFile = document.getElementById('pdfFile');
 let regLink = document.getElementById('reglink');
 let regAns = document.getElementById('regans');
 let select = document.getElementById('selectbox');
-
+let selectOnes = document.getElementsByName('selectOne');
 
 
 
@@ -79,12 +79,35 @@ function Validate(){
   //Permanent Address Validation
   if(regAddressValue === ''){
     setErrorFor(regAddress,'Address cannot be blank');
+
   }
   else if(regAddressValue.length>=10)
   {
     setSuccessFor(regAddress);
+
   }else{
     setErrorFor(regAddress,'Minimum 10 character required');
+  
+  }
+
+  // Address rechecking 
+
+  for(z=0;z<selectOnes.length;z++){
+    if(selectOnes[z].checked===true){
+      if(selectOnes[z].id==='yes'){
+        let regcaddressSet = document.getElementById('regcaddress');
+        regcaddressSet.value=regAddressValue;
+        setSuccessFor(regcaddress);
+      }
+      else{
+        setErrorFor(regcaddress,'Minimum 10 character required');
+      }
+      setselectOne('hidden');
+      break;
+    }else{
+      setselectOne('visible');
+    }
+
   }
 
   //Location Validation
@@ -233,6 +256,11 @@ function isMobile(mobileN){
 function setGender(input){
   let radios=document.getElementById('genderSmall');
   radios.style.visibility=input;
+}
+
+function setselectOne(input){
+  let selectOneSmalls = document.getElementById('selectOneSmall');
+  selectOneSmalls.style.visibility=input;
 }
 
 function setCheck(input){
