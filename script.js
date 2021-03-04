@@ -2,6 +2,7 @@ let regForm = document.getElementById('formId');
 
 let regEmail = document.getElementById('regemail');
 let regName = document.getElementById('regname');
+let regAge = document.getElementById('regage');
 let gender = document.getElementsByName('gender');
 let regAddress = document.getElementById('regaddress');
 let local = document.getElementsByName('locals');
@@ -14,6 +15,7 @@ let regLink = document.getElementById('reglink');
 let regAns = document.getElementById('regans');
 let select = document.getElementById('selectbox');
 let selectOnes = document.getElementsByName('selectOne');
+let btnValue = document.getElementById('btns');
 
 
 
@@ -21,8 +23,12 @@ let selectOnes = document.getElementsByName('selectOne');
 regForm.addEventListener('submit',(e)=>{
   e.preventDefault();
   Validate();
-  
+
 })
+
+// btnValue.addEventListener('click',function(){
+
+// })
 
 
 
@@ -30,6 +36,7 @@ function Validate(){
   // getting values from input 
   let regEmailValue = regEmail.value.trim();
   let regNameValue = regName.value.trim();
+  let regAgeValue = regAge.value.trim();
   let regAddressValue = regAddress.value.trim();
   let regMobileValue = regMobile.value.trim();
   let imgFileValue = imgFile.value;
@@ -37,16 +44,18 @@ function Validate(){
   let regLinkValue = regLink.value.trim();
   let regAnsValue = regAns.value.trim();
   
-  
+let flag = 0;
 
 
   // email validation 
   if(regEmailValue === ''){
-    setErrorFor(regEmail,'email cannot be blank');
+    setErrorFor(regEmail,'Email cannot be blank');
+    flag++;
   }
   else if(!isEmail(regEmailValue))
   {
-    setErrorFor(regEmail,'enter a valid email');
+    setErrorFor(regEmail,'Enter a valid email');
+    flag++;
   }
   else{
     setSuccessFor(regEmail);
@@ -54,14 +63,37 @@ function Validate(){
 
   // name validation
   if(regNameValue === ''){
-    setErrorFor(regName,'name cannot be blank');
+    setErrorFor(regName,'Name cannot be blank');
+    flag++;
   }
-  else if(regNameValue.length>=3)
+  // else if(regNameValue.length>=3)
+  // {
+  //   setSuccessFor(regName);
+  // }
+  // else{
+  //   setErrorFor(regName,'Minimum 3 character required');
+  // }
+  else if(!isName(regNameValue))
   {
-    setSuccessFor(regName);
+    setErrorFor(regName,'Enter a valid Name');
+    flag++;
   }
   else{
-    setErrorFor(regName,'Minimum 3 character required');
+    setSuccessFor(regName);
+  }
+  
+
+  //age validation 
+  if(regAgeValue === ''){
+    setErrorFor(regAge,'Age cannot be blank');
+    flag++;
+  }
+  else if(regAgeValue >= 1 && regAgeValue <= 99){
+    setSuccessFor(regAge);
+  }
+  else {
+    setErrorFor(regAge,'Enter Proper Age between 1-99');
+    flag++;
   }
 
   // gender Validation
@@ -72,13 +104,13 @@ function Validate(){
         break;
       }else{
         setGender('visible');
-        
       }
   }
 
   //Permanent Address Validation
   if(regAddressValue === ''){
     setErrorFor(regAddress,'Address cannot be blank');
+    flag++;
 
   }
   else if(regAddressValue.length>=10)
@@ -87,6 +119,7 @@ function Validate(){
 
   }else{
     setErrorFor(regAddress,'Minimum 10 character required');
+    flag++;
   
   }
 
@@ -100,7 +133,9 @@ function Validate(){
         setSuccessFor(regcaddress);
       }
       else{
+        document.getElementById('regcaddress').disabled=false;
         setErrorFor(regcaddress,'Minimum 10 character required');
+        flag++;
       }
       setselectOne('hidden');
       break;
@@ -131,10 +166,12 @@ function Validate(){
         let regEduvalue = regedu.value.trim();
           if(regEduvalue === ''){
             setErrorFor(regedu,'Others field cannot be blank');
+            flag++;
           }else if(regEduvalue.length>=2){
             setSuccessFor(regedu);
           }else{
             setErrorFor(regedu,'Enter a valid name');
+            flag++;
           }
       }
         setEdu('hidden');
@@ -148,11 +185,13 @@ function Validate(){
 
   // Mobile validation
   if(regMobileValue === ''){
-    setErrorFor(regMobile,'mobile cannot be blank');
+    setErrorFor(regMobile,'Mobile cannot be blank');
+    flag++;
   }
   else if(!isMobile(regMobileValue))
   {
-    setErrorFor(regMobile,'enter a valid mobile number');
+    setErrorFor(regMobile,'Enter a valid mobile number');
+    flag++;
   }
   else{
     setSuccessFor(regMobile);
@@ -167,10 +206,12 @@ function Validate(){
         let regSkillValue = regskill.value.trim();
           if(regSkillValue === ''){
             setErrorFor(regskill,'Skills field cannot be blank');
+            flag++;
           }else if(regSkillValue.length>=3){
             setSuccessFor(regskill);
           }else{
             setErrorFor(regskill,'Enter a valid skill');
+            flag++;
           }
       }
         setSkill('hidden');
@@ -185,26 +226,30 @@ function Validate(){
   if( imgFileValue != ''){
     setSuccessFor(imgFile);
   }else{
-    setErrorFor(imgFile,'picture cannot be blank');
+    setErrorFor(imgFile,'Picture cannot be blank');
+    flag++;
   }
 
   // Resume validation
   if( pdfFileValue != ''){
     setSuccessFor(pdfFile);
   }else{
-    setErrorFor(pdfFile,'file cannot be blank');
+    setErrorFor(pdfFile,'File cannot be blank');
+    flag++;
   }
 
   // Language validation 
-  if(select.value==='Select Language'){
-    setLang('visible');
-  }else{
+  if(select.value==='kannada'||select.value==='hindi'||select.value==='telgu'||select.value==='english'){
     setLang('hidden');
+  }else{
+    console.log(select.value);
+    setLang('visible');
   }
 
   // Linked validation
   if(regLinkValue === ''){
     setErrorFor(regLink,'Linkedin cannot be blank');
+    flag++;
   }
   else{
     setSuccessFor(regLink);
@@ -213,15 +258,21 @@ function Validate(){
   // answer validation 
   if(regAnsValue === ''){
     setErrorFor(regAns,'Answer cannot be blank');
+    flag++;
   }
-  else if(regNameValue.length>=10)
+  else if(regAnsValue.length>=10)
   {
     setSuccessFor(regAns);
+
   }
   else{
     setErrorFor(regAns,'Write about yourself minimum 10 words ');
+    flag++;
   }
-
+if(flag===0){
+  alert('form has been submitted');
+  location.reload();
+}
 }
 //----------------------------- Error Function   -------------------------- //
 function setErrorFor(input,message){
@@ -241,14 +292,19 @@ function setSuccessFor(input){
 
 //----------------------------- email validation using regX-------------------------- //
 function isEmail(email){
-  return /^[a-zA-z]{3,15}@[a-z]{4,6}\.[a-z]{3,4}([.a-z]{2,3})?$/.test(email);
+  return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
   
 
-  // /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+
 
   // ^([a-z 0-9\.-]+)@([a-z0-9-]+).([a-z]{2,8})(.[a-z]{2,8})?$
+  // /^[a-zA-z]{3,15}@[a-z]{4,6}\.[a-z]{3,4}([.a-z]{2,3})?$/
 }
 //----------------------------- email validation using regX-------------------------- //
+
+function isName(nameN){
+  return /^[A-Z a-z _-]{3,15}$/.test(nameN);
+}
 function isMobile(mobileN){
   return /^[6-9]\d{9}$/.test(mobileN);
 }
@@ -282,3 +338,4 @@ function setLang(input){
   let lang = document.getElementById('langSmall');
   lang.style.visibility = input;
 }
+
