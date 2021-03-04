@@ -270,7 +270,7 @@ let flag = 0;
     flag++;
   }
 if(flag===0){
-  alert('form has been submitted');
+  alert('Successfully registred');
   location.reload();
 }
 }
