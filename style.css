@@ -92,9 +92,10 @@ body{
 }
 #langSmall{
   position: absolute;
-  left:450px;
+  left:410px;
   color:red;
   visibility: hidden;
+  
 }
 
 .up {
